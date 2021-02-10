@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text]{
+            width: 50%;
+            padding: 12px ;            
+            margin: 12px 0px;      
+            border: 2px dotted orchid;
+            border-radius: 10px ;
+            background-color: pink;
+            color: darkblue;
+            background-image: url('leaf.png');
+            background-repeat: no-repeat;
+            background-position: 200px;
+            
+        }
+        ::placeholder {
+            color: darkgreen;
+        }
+
+        input:focus{ /*hover*/
+            border: 2px solid red;
+            padding: 12 px;
+            height: auto;
+            background-image:none ; 
+            
+        }
+        select{
+            width: 50%;
+            height: 40px;
+            border: dotted orchid;
+            border-radius: 12px ;
+            margin: 12px 0px;
+            cursor: pointer;
+        }
+        
+        button{
+            background-color: powderblue;    
+            padding: 12px;
+            margin-top: 10px;
+            width: 50%;
+            font-size: 30px;
+            font-style: italic;
+            background-color: orange;
+            cursor:pointer;
+            
+        }
+        button:hover{
+            cursor:-moz-grab;
+            background-color: orangered;
+        }
+        button:focus{
+            
+            border: dotted red;
+            border-radius: 8px;
+        
+        }
+        label{
+            padding: 0px 0px 0px 0px;
+            /*display: block;*/
+        }
+        
+        .container{
+            width : 500px;
+            margin: auto;
+            padding-left: 160px;
+            margin-top: 70px;
+            background-color: paleturquoise;
+            border : solid;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body style="background-color: rgb(203, 199, 255);">
+    <h1>Formulario Estilizado con css</h1>
+    <div class="container">  <!-- esto es para separa html del que se tiene-->
+        <form action="http://localhost:3000" method="POST"> 
+            <label for="nombre"> Pon tu Nombre</label>
+            <br>
+            <input type="text" name = "nombre" id = "nombre" placeholder="Nombre aqui" required/>
+            <br>
+            <label for="apellido"> Pon tu Apellido</label>
+            <br>
+            <input type="text" name = "apellido" id = "apellido" placeholder="Apellido aqui" required/>
+            <br>
+            <label for="pais">Escoge tu país</label>
+            <br>
+            <select name = "pais" id = "pais" required> 
+                <option disabled selected hidden>Seleccione</option>
+                <option>Colombia</option>
+                <option>Costa Rica</option>
+                <option>Brasil</option>
+                
+            </select>
+            <br>
+            <button type="submit">Enviar Datos</button>
+
+        </form>
+        
+    </div>
+
+</body>
+</html>
