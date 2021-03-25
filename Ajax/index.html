@@ -5,14 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table {
+            font-size: 8pt; 
+            color:#e72525;  
+            font-family: Helvetica; 
+            margin: 0px;
+            border: 2px, solid, black;
+            border-collapse:collapse;
+           
+
+        }
+
+        th {
+            font-size: 10pt; 
+            text-align: center;
+            color:#550055;  
+            font-family: Helvetica; 
+            border: 2px, solid, black;
+            border-color: #999;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+        }
+
+        td {
+            font-size: 10pt; 
+            text-align: center;
+            color:#000000;  
+            font-family: Helvetica; 
+            border-color: #999;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Esta es la seccion de ajax futbol club</h1>
-    <ul id = "lista_Usuarios">
-        
-    </ul>
+<button id = "boton" >enviar datos usuarios</button>
+</br>
+<input type="text" name = "nombre" id = "name" placeholder="Escriba su Nombre" required/>
+</br>
+</br>
+</br>
+    <table>
+        <thead>
+            <th>
+                Nombre
+            </th>
+        </thead>
 
-    <script src="xmlhttprequest.js">
+        <tbody id = "lista-usuarios">
+
+        </tbody>
+    </table>
+
+    <script src="fetchEjemplo.js">
 
     </script>
 </body>

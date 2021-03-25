@@ -1,15 +1,40 @@
-const listaUsuarios = document.getElementById('lista_Usuarios') // es el unordered-list
+const listaUsuarios = document.getElementById("lista-usuarios");
+const boton = document.getElementById("boton");
 
-function reqListener(){
-
-   const usuarios =  JSON.parse(this.responseText) //JSON.parse convierte el texto de responsive en un objeto de JS
-   console.log(usuarios)
-   const usuariosRender = usuarios.map( singleUser => `<li>${singleUser.nombre}</li>`).join('') //map, toma cada valor y le realizo una funcion, el join para unitr y quitar las comas 
-   console.log(usuariosRender)
-   listaUsuarios.innerHTML = usuariosRender //para introducir los ietems en el html osea en el ul
+function reqListener() {
+  const usuarios = JSON.parse(this.responseText); //convierte de texto como viene en objetos
+  console.log(usuarios);
+  const usuariosRender = usuarios
+    .map(usuario => `<li>${usuario.nombre}</li>`)
+    .join(" "); //junta el array de objetos con texto html
+  console.log(usuariosRender);
+  listaUsuarios.innerHTML = usuariosRender;
 }
 
-var oReq = new XMLHttpRequest()
-oReq.addEventListener("load", reqListener) // evento de cargar 
-oReq.open("GET", "https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios")
-oReq.send()
+var peticion = new XMLHttpRequest(); //peticion http sin neceisada de recargar la pagina
+peticion.addEventListener("load", reqListener);
+
+function enviarDatos() {
+  peticion.open(
+    "POST",
+    "https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios",
+    true
+  );
+  peticion.setRequestHeader(
+    "Content-type",
+    "application/x-www-form-urlencoded"
+  );
+  peticion.send("nombre=LUNES24");
+  setTimeout(refrescar, 3000); // ya ejecuta la funcion
+}
+
+function refrescar() {
+  peticion.open("GET", "https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios");
+  peticion.send();
+}
+
+boton.onclick = enviarDatos;
+//POST -> para crear
+//PUT -> actualizar
+//GET -> visualizar
+//DELETE -> eliminar
