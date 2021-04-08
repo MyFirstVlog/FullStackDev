@@ -8,6 +8,7 @@
     <style>
         * {
             box-sizing: border-box;
+            
         }
 
         input[type=text]{
@@ -18,7 +19,7 @@
             border-radius: 10px ;
             background-color: pink;
             color: darkblue;
-            background-image: url('leaf.png');
+            
             background-repeat: no-repeat;
             background-position: 200px;
             
@@ -52,8 +53,10 @@
             font-style: italic;
             background-color: orange;
             cursor:pointer;
+            box-sizing:content-box;
             
         }
+       
         button:hover{
             cursor:-moz-grab;
             background-color: orangered;
@@ -64,28 +67,80 @@
             border-radius: 8px;
         
         }
-        
         label{
             padding: 0px 0px 0px 0px;
             /*display: block;*/
         }
         
         .container{
-            width : 500px;
+            width : 600px;
             margin: auto;
             padding-left: 160px;
             margin-top: 70px;
             background-color: paleturquoise;
             border : solid;
             border-radius: 8px;
+            font-style: normal;
+            font-size: 14px;
+        }
+        #deleteButton{
+            background-color: powderblue;    
+            padding: 12px;
+            margin-top: 10px;
+            margin-right: 15px;
+            width: 50%;
+            font-size: 15px;
+            font-style: italic;
+            background-color:chocolate;
+            cursor:pointer;
+            box-sizing:content-box;
+            
+        }
+        #deleteButton:hover{
+            cursor:-moz-grab;
+            background-color: orangered;
+        }
+        #editButton{
+            background-color: rgb(222, 184, 218);    
+            padding: 12px;
+            margin-top: 10px;
+            margin-right: 15px;
+            width: 50%;
+            font-size: 15px;
+            font-style: italic;            
+            cursor:pointer;
+            box-sizing:content-box;
+            
+        }
+        #editButton:hover{
+            cursor:-moz-grab;
+            background-color: rgb(255, 0, 132);
+        }
+
+        #verButton{
+            background-color: rgb(212, 230, 110);    
+            padding: 12px;
+            margin-top: 10px;
+            margin-right: 15px;
+            width: 50%;
+            font-size: 15px;
+            font-style: italic;            
+            cursor:pointer;
+            box-sizing:content-box;
+            
+        }
+        #verButton:hover{
+            cursor:-moz-grab;
+            background-color: rgb(255, 0, 132);
         }
 
     </style>
 </head>
 <body style="background-color: rgb(203, 199, 255);">
-    <h1>Formulario Estilizado con css</h1>
-    <div class="container">  <!-- esto es para separa html del que se tiene-->
-        <form action="http://localhost:3000" method="POST"> 
+    <h1>Primera APP usando ajax</h1>
+    <div class="container">  <!-- esto es para separa htmls del que se tiene-->
+        <form>
+            <input type="hidden" name="indice" id = "indice"/> 
             <label for="nombre"> Pon tu Nombre</label>
             <br>
             <input type="text" name = "nombre" id = "nombre" placeholder="Nombre aqui" required/>
@@ -97,16 +152,42 @@
             <label for="pais">Escoge tu país</label>
             <br>
             <select name = "pais" id = "pais" required> 
-                <option disabled selected hidden>Seleccione</option>
+                <option disabled selected hidden></option>
                 <option>Colombia</option>
                 <option>Costa Rica</option>
                 <option>Brasil</option>
                 
             </select>
             <br>
-            <button type="submit">Enviar Datos</button>
+            <button type="submit" id = "boton">Enviar Datos</button>
+            <button type="reset" id = "resetBotton">Limpiar</button>
 
         </form>
+
+        <table>
+            <thead>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellido
+                </th>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </thead>
+    
+            <tbody id = "lista-usuarios">
+    
+            </tbody>
+        </table>
+
+        <script src="fetchEjemplo.js">
+
+        </script>
         
     </div>
 
