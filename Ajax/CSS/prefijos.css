@@ -1,0 +1,15 @@
+.prueba{
+    width: 400px;
+    height: 400px;
+    background-color: bisque;
+    
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    
+}
+.div2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width:fit-content ;
+    background-color: blue;
+}

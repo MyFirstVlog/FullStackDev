@@ -1,0 +1,20 @@
+a{
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+a:hover{
+    cursor:-moz-grab;
+    text-decoration: underline;
+}
+a:link{
+    color:black 
+}
+a:visited{
+    color: blue;
+}
+input{
+    border-radius: 8px;
+}
+input:focus{
+    border-color: blueviolet;
+}

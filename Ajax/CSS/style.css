@@ -1,0 +1,23 @@
+body {
+    background-color:blanchedalmond; 
+    box-sizing: border-box;
+}
+
+h1{
+    color: chocolate;
+    text-decoration: underline;
+}
+
+p{
+    font-size: small;
+    font-style: oblique;
+}
+.instructor{
+    color: cornflowerblue;
+}
+
+#piepagina{
+    margin-top: 600px;
+    background-color: darkcyan;
+    font-weight: bold;
+}

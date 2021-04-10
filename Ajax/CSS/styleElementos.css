@@ -1,0 +1,22 @@
+ul li::before{
+    
+    content:url(calculator.png);
+    
+}
+ul li{
+    list-style-type: none;
+    font-size: 40px;
+}
+
+ul li::after{
+    content: url(calculator.png);
+}
+
+#inicio::first-letter{
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+p::first-line{
+    text-decoration-line: underline;
+}
